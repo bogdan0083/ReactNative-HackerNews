@@ -10,11 +10,11 @@ import {
   mapNavigationStateParamsToProps,
 } from 'common/navigation';
 
-class Headlines extends React.Component {
+class Headlines extends React.Component<void, any, any> {
+  static navigationOptions: any;
   constructor(props) {
     super(props);
     this.state = { refreshing: false };
-    this._onRefresh = this._onRefresh.bind(this);
   }
   componentDidMount() {
     this.props.fetchStories();
@@ -44,7 +44,7 @@ class Headlines extends React.Component {
               viewDetails={() => navigate('Details', { story: item })}
             />
           )}
-          keyExtractor={(item, index) => index}
+          keyExtractor={(item, index) => `${index}`}
         />
       </View>
     );

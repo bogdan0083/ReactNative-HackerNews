@@ -1,11 +1,14 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 
 import { fetchIds } from 'stories/stories.actions';
 import { getStoriesOfType } from 'stories/stories.selectors';
 
-export const withStoryData = (Component, type = 'top') => {
+export const withStoryData: (
+  React.ComponentType<any>,
+  ?string
+) => React.ComponentType<any> = (Component, type = 'top') => {
   const WithStoryData = ({ fetchStories, stories }) => (
     <Component stories={stories} fetchStories={fetchStories} />
   );

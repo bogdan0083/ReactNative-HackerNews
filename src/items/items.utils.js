@@ -8,8 +8,8 @@ export const createPlaceholderStories = n =>
   });
 
 export const padWithPlaceholderStories = (
-  arrayOfStories,
-  targetLength = numStoriesToDisplay
+  arrayOfStories: Array<any>,
+  targetLength: number = numStoriesToDisplay
 ) => [
   ...arrayOfStories,
   ...createPlaceholderStories(targetLength - arrayOfStories.length),

@@ -5,8 +5,19 @@ import HTML from 'react-native-render-html';
 
 const Separator = () => <Text style={styles.metaText}> | </Text>;
 
+type Props = {
+  _loaded: boolean,
+  fetchItemForId: string => any,
+  id: string,
+  _loading: boolean,
+  text: string,
+  by: string,
+  kids: Array<any>,
+  items: Array<any>,
+};
+
 class Comment extends React.Component {
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.state = { expanded: false };
   }
