@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { TabNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';

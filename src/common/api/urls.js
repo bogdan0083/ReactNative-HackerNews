@@ -1,3 +1,5 @@
+// @flow
+
 export const topStoriesUrl =
   'https://hacker-news.firebaseio.com/v0/topstories.json';
 export const askStoriesUrl =

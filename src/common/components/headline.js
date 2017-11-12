@@ -1,9 +1,24 @@
+// @flow
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 const Separator = () => <Text style={styles.metaText}> | </Text>;
 
-const Headline = ({ _loading, title, by, score, descendants, viewDetails }) => {
+const Headline = ({
+  _loading,
+  title,
+  by,
+  score,
+  descendants,
+  viewDetails,
+}: {
+  _loading: boolean,
+  title: string,
+  by: string,
+  score: number,
+  descendants: Array<mixed>,
+  viewDetails: () => mixed,
+}) => {
   if (!_loading) {
     return (
       <TouchableOpacity onPress={viewDetails}>

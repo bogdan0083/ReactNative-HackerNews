@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { View, FlatList, RefreshControl, StyleSheet } from 'react-native';
 import { StackNavigator } from 'react-navigation';

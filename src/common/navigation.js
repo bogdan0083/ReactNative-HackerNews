@@ -1,9 +1,11 @@
+// @flow
 import React from 'react';
 
 /* eslint-disable react/no-multi-comp */
 
 export const mapNavigationStateParamsToProps = SomeComponent => {
   class WrappedComponent extends React.Component {
+    static navigationOptions: any;
     render() {
       const { navigation: { state: { params } } } = this.props;
       return <SomeComponent {...params} {...this.props} />;

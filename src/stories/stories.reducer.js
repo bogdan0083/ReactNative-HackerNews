@@ -1,3 +1,4 @@
+// @flow
 import { handleActions } from 'redux-actions';
 
 import { idsFetched, fetchIds } from 'stories/stories.actions';

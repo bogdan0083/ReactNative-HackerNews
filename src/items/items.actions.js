@@ -1,3 +1,4 @@
+// @flow
 import { createAction } from 'redux-actions';
 
 export const fetchItem = createAction('FETCH_ITEM');

@@ -1,3 +1,4 @@
+// @flow
 import { numStoriesToDisplay } from 'common/constants';
 
 export const createPlaceholderStories = n =>

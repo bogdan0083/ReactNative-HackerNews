@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import { connect } from 'react-redux';
@@ -9,6 +10,7 @@ import Comment from 'items/comment';
 import { fetchItem } from 'items/items.actions';
 
 class Story extends React.Component {
+  static navigationOptions: any;
   componentDidMount() {
     const { story, items, fetchItemForId } = this.props;
     if (story && story.kids) {

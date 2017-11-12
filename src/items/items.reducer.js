@@ -1,3 +1,4 @@
+// @flow
 import { handleActions } from 'redux-actions';
 
 import { itemFetched } from 'items/items.actions';

@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import HTML from 'react-native-render-html';

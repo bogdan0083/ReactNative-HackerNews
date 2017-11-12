@@ -8,9 +8,11 @@
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-flowtype": "^2.39.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
+    "flow-bin": "0.49.1",
     "husky": "^0.14.3",
     "jest-expo": "^21.0.2",
     "lint-staged": "^4.3.0",
@@ -31,13 +33,15 @@
     "precommit": "lint-staged",
     "prettify":
       "prettier \"./**/*.{js,json,css}\" --config .prettierrc.json -l --write",
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "flow": "flow"
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
     "expo": "^21.0.0",
+    "prop-types": "^15.6.0",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.48.4",
     "react-native-elements": "^0.17.0",

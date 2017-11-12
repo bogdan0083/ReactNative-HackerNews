@@ -1,5 +1,6 @@
 module.exports = {
   extends: [
+    'plugin:flowtype/recommended',
     'eslint:recommended',
     'plugin:react/recommended',
     'airbnb',
@@ -14,7 +15,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  plugins: ['react'],
+  plugins: ['react', 'flowtype'],
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 8,
