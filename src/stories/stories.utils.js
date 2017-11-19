@@ -5,10 +5,12 @@ import { connect } from 'react-redux';
 import { fetchIds } from 'stories/stories.actions';
 import { getStoriesOfType } from 'stories/stories.selectors';
 
-export const withStoryData: (
-  React.ComponentType<any>,
-  ?string
-) => React.ComponentType<any> = (Component, type = 'top') => {
+import type { ReactComponentWithNavigationType } from 'types/navigation.types';
+
+export const withStoryData = (
+  Component: ReactComponentWithNavigationType,
+  type: string = 'top'
+) => {
   const WithStoryData = ({ fetchStories, stories }) => (
     <Component stories={stories} fetchStories={fetchStories} />
   );

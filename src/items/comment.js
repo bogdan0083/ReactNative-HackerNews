@@ -3,16 +3,12 @@ import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import HTML from 'react-native-render-html';
 
+import type { CommentType } from 'types/comment.types';
+
 const Separator = () => <Text style={styles.metaText}> | </Text>;
 
-type Props = {
-  _loaded: boolean,
-  fetchItemForId: string => any,
-  id: string,
-  _loading: boolean,
-  text: string,
-  by: string,
-  kids: Array<any>,
+type Props = CommentType & {
+  fetchItemForId: string => void,
   items: Array<any>,
 };
 

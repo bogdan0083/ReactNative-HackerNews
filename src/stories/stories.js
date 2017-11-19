@@ -10,7 +10,20 @@ import {
   mapNavigationStateParamsToProps,
 } from 'common/navigation';
 
-class Headlines extends React.Component<any, any> {
+import type { StoriesType } from 'types/story.types';
+import type { NavigationType } from 'types/navigation.types';
+
+type Props = {
+  stories: StoriesType,
+  fetchStories: () => void,
+  navigation: NavigationType,
+};
+
+type State = {
+  refreshing: boolean,
+};
+
+class Headlines extends React.Component<Props, State> {
   static navigationOptions: any;
   constructor(props) {
     super(props);

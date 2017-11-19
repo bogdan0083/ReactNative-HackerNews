@@ -2,7 +2,14 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
+import type { StoryType } from 'types/story.types';
+
 const Separator = () => <Text style={styles.metaText}> | </Text>;
+
+type Props = {
+  ...StoryType,
+  viewDetails: () => void,
+};
 
 const Headline = ({
   _loading,
@@ -11,14 +18,7 @@ const Headline = ({
   score,
   descendants,
   viewDetails,
-}: {
-  _loading: boolean,
-  title: string,
-  by: string,
-  score: number,
-  descendants: Array<mixed>,
-  viewDetails: () => mixed,
-}) => {
+}: Props) => {
   if (!_loading) {
     return (
       <TouchableOpacity onPress={viewDetails}>
