@@ -10,7 +10,7 @@ import {
   mapNavigationStateParamsToProps,
 } from 'common/navigation';
 
-class Headlines extends React.Component<void, any, any> {
+class Headlines extends React.Component<any, any> {
   static navigationOptions: any;
   constructor(props) {
     super(props);

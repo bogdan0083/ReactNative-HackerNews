@@ -1,7 +1,7 @@
 // @flow
 import { numStoriesToDisplay } from 'common/constants';
 
-export const createPlaceholderStories = n =>
+export const createPlaceholderStories = (n: number) =>
   new Array(n).fill({
     _loaded: false,
     _loading: true,

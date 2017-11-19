@@ -9,7 +9,13 @@ import Comment from 'items/comment';
 
 import { fetchItem } from 'items/items.actions';
 
-class Story extends React.Component {
+type Props = {
+  story: any,
+  items: Array<any>,
+  fetchItemForId: string => any,
+};
+
+class Story extends React.Component<Props> {
   static navigationOptions: any;
   componentDidMount() {
     const { story, items, fetchItemForId } = this.props;
@@ -42,7 +48,8 @@ class Story extends React.Component {
                   items={items}
                   fetchItemForId={fetchItemForId}
                 />
-              )}
+              )
+            }
             keyExtractor={(item, index) => (item && item.id) || index}
           />
         )}

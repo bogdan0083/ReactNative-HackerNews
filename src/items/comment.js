@@ -16,7 +16,11 @@ type Props = {
   items: Array<any>,
 };
 
-class Comment extends React.Component {
+type State = {
+  expanded: boolean,
+};
+
+class Comment extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { expanded: false };

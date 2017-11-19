@@ -5,7 +5,7 @@ import type { Component } from 'react';
 /* eslint-disable react/no-multi-comp */
 
 export const mapNavigationStateParamsToProps = (
-  SomeComponent: Component<any, any, any>
+  SomeComponent: Component<any, any>
 ) => {
   class WrappedComponent extends React.Component {
     static navigationOptions: any;
@@ -20,7 +20,7 @@ export const mapNavigationStateParamsToProps = (
 };
 
 export const mapScreenPropsToProps = SomeComponent => {
-  class WrappedComponent extends React.Component {
+  class WrappedComponent extends React.Component<any, any> {
     render() {
       const { screenProps, ...otherProps } = this.props;
       return <SomeComponent {...screenProps} {...otherProps} />;
