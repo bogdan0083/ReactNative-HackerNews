@@ -1,13 +1,23 @@
 {
-  "presets": ["babel-preset-expo"],
+  "presets": [
+    "babel-preset-react-native-stage-0/decorator-support"
+  ],
   "plugins": [
-    ["transform-react-jsx-source"],
+    [
+      "transform-react-jsx-source"
+    ],
     [
       "module-resolver",
       {
-        "root": ["./src"],
+        "root": [
+          "./src"
+        ],
         "cwd": "babelrc",
-        "extensions": [".js", ".ios.js", ".android.js"],
+        "extensions": [
+          ".js",
+          ".ios.js",
+          ".android.js"
+        ],
         "alias": {}
       }
     ]

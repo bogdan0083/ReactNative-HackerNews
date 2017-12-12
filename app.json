@@ -12,5 +12,7 @@
     "android": {
       "package": "com.georgejose.reactnativehackernews"
     }
-  }
+  },
+  "name": "hackernews",
+  "displayName": "Hacker News"
 }
