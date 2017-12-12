@@ -49,6 +49,7 @@
 		F078293564B14BB490975FEA /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55DA6F38A5424A7A89E555B6 /* Ionicons.ttf */; };
 		F28F8272454844658FDFF2DB /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7BBEC7554D14F3B9D8690E8 /* SimpleLineIcons.ttf */; };
 		F9F665EF34FB42D2908BE00E /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EADEFB811FB4E0C9C528BA5 /* MaterialCommunityIcons.ttf */; };
+		FEDD43721FDF996E00934353 /* SplashScreenLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDD434F1FDF996E00934353 /* SplashScreenLogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -345,6 +346,7 @@
 		CC8A969835EA4A41AB564295 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		E3C2D937105A4275A22AB660 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		F6306CD327014D72B54FFA38 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		FEDD434F1FDF996E00934353 /* SplashScreenLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashScreenLogo.png; path = ../screenshots/SplashScreenLogo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -490,6 +492,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
+				FEDD434F1FDF996E00934353 /* SplashScreenLogo.png */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = hackernews;
@@ -1066,6 +1069,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				7C8B2DF2091C43D583C7507A /* Entypo.ttf in Resources */,
+				FEDD43721FDF996E00934353 /* SplashScreenLogo.png in Resources */,
 				34E19187E1E64A3ABA2F162A /* EvilIcons.ttf in Resources */,
 				AC6F3BD01F0A45889CB9BF35 /* Feather.ttf in Resources */,
 				A5361D001BFB48A9A8935556 /* FontAwesome.ttf in Resources */,
