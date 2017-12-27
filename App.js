@@ -13,6 +13,7 @@ import Ask from 'ask/screens/ask';
 import Jobs from 'jobs/screens/jobs';
 
 import StorybookUI from './storybook';
+import { colors } from 'common/constants';
 
 // eslint-disable-next-line no-global-assign
 XMLHttpRequest = GLOBAL.originalXMLHttpRequest
@@ -69,7 +70,7 @@ const App = () => (
     style={{
       flex: 1,
       flexDirection: 'row',
-      backgroundColor: '#F6F6EF',
+      backgroundColor: colors.background,
       paddingTop: Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT,
     }}
   >

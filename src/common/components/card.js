@@ -61,6 +61,14 @@ class Card extends React.Component {
       shadowOffsetHeight: height,
     } = this.state;
     const { onPress } = this.props;
+
+    const childWithProp = React.Children.map(this.props.children, child =>
+      React.cloneElement(child, {
+        onPressIn: this.animateTouchIn.bind(this),
+        onPressOut: this.animateTouchOut.bind(this),
+      })
+    );
+
     return (
       <TouchableWithoutFeedback
         onPressIn={this.animateTouchIn.bind(this)}
@@ -80,7 +88,7 @@ class Card extends React.Component {
             },
           ]}
         >
-          {this.props.children}
+          {childWithProp}
         </Animated.View>
       </TouchableWithoutFeedback>
     );

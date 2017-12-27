@@ -70,13 +70,19 @@ class Comment extends React.Component {
         id,
         fetchComment,
         childComment,
+        onPressIn,
+        onPressOut,
       },
       state: { expanded },
     } = this;
     const numComments = getNumItems(this.props.kids);
     if (!_loading) {
       return (
-        <TouchableOpacity onPress={this.handleExpand.bind(this)}>
+        <TouchableOpacity
+          onPress={this.handleExpand.bind(this)}
+          onPressIn={onPressIn}
+          onPressOut={onPressOut}
+        >
           <View
             style={[styles.container, childComment ? {} : { marginLeft: 0 }]}
           >
@@ -97,6 +103,8 @@ class Comment extends React.Component {
                       key={_id}
                       items={items}
                       fetchComment={fetchComment}
+                      onPressIn={onPressIn}
+                      onPressOut={onPressOut}
                       childComment
                     />
                   ) : (
@@ -105,6 +113,8 @@ class Comment extends React.Component {
                       key={_id}
                       fetchComment={fetchComment}
                       items={items}
+                      onPressIn={onPressIn}
+                      onPressOut={onPressOut}
                       childComment
                     />
                   )
