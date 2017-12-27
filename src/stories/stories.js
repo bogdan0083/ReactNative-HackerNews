@@ -1,14 +1,9 @@
 import React from 'react';
-import {
-  View,
-  FlatList,
-  RefreshControl,
-  StyleSheet,
-  TouchableOpacity,
-} from 'react-native';
+import { View, FlatList, RefreshControl, StyleSheet } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-import Headline from 'common/components/headline';
+import { HeadlineCard as Headline } from 'common/components/headline';
+import { colors } from 'common/constants';
 import Story from 'stories/story.ui';
 import {
   mapScreenPropsToProps,
@@ -16,14 +11,13 @@ import {
 } from 'common/navigation';
 
 class Headlines extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { refreshing: false, viewableItems: new Set() };
-    this._onRefresh = this._onRefresh.bind(this);
-  }
+  state = { refreshing: false, viewableItems: new Set() };
+
   componentDidMount() {
     this.props.fetchStories();
   }
+
+  _onRefresh = this._onRefresh.bind(this);
 
   _onRefresh() {
     this.setState({ refreshing: true });
@@ -46,15 +40,12 @@ class Headlines extends React.Component {
           data={stories}
           renderItem={({ item, index }) => (
             <View style={styles.headlineContainer}>
-              <TouchableOpacity
+              <Headline
                 onPress={() => navigate('Details', { story: item })}
-              >
-                <Headline
-                  {...item}
-                  isViewable={this.state.viewableItems.has(index)}
-                  fetchItemForId={fetchItemForId}
-                />
-              </TouchableOpacity>
+                {...item}
+                isViewable={this.state.viewableItems.has(index)}
+                fetchItemForId={fetchItemForId}
+              />
             </View>
           )}
           keyExtractor={(item, index) => index}
@@ -90,10 +81,11 @@ export default Stories;
 
 const styles = StyleSheet.create({
   stories: {
-    backgroundColor: '#F6F6EF',
+    backgroundColor: colors.background,
   },
   headlineContainer: {
-    paddingLeft: 15,
-    paddingRight: 15,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 7,
   },
 });

@@ -5,10 +5,7 @@ import Separator from 'common/components/separator';
 import { colors } from 'common/constants';
 
 class CommentLoading extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { fadeAnim: new Animated.Value(0.5) };
-  }
+  state = { fadeAnim: new Animated.Value(0.5) };
 
   componentDidMount() {
     this.animateLoading();

@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import Separator from 'common/components/separator';
 import HeadlineLoading from 'common/components/headline.loading.ui';
+import Card from 'common/components/card';
 
 class Headline extends React.Component {
   componentWillReceiveProps(nextProps) {
@@ -55,8 +56,6 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     borderWidth: 0,
-    borderColor: '#d6d7da',
-    borderBottomWidth: 0.5,
   },
   headlineText: {
     fontSize: 17,
@@ -75,5 +74,11 @@ const styles = StyleSheet.create({
     color: 'grey',
   },
 });
+
+export const HeadlineCard = props => (
+  <Card onPress={props.onPress}>
+    <Headline {...props} />
+  </Card>
+);
 
 export default Headline;

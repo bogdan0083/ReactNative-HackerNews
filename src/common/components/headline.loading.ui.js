@@ -1,14 +1,12 @@
 import React from 'react';
 import { View, StyleSheet, Animated, Easing } from 'react-native';
+
 import Separator from 'common/components/separator';
 
 import { colors } from 'common/constants';
 
 class HeadlineLoading extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { fadeAnim: new Animated.Value(0.5) };
-  }
+  state = { fadeAnim: new Animated.Value(0.5) };
   animateLoading() {
     Animated.timing(this.state.fadeAnim, {
       toValue: 1,
@@ -49,8 +47,6 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     borderWidth: 0,
-    borderColor: '#d6d7da',
-    borderBottomWidth: 0.5,
   },
   loadingTitle: {
     backgroundColor: colors.loadingTextPlaceholder,
