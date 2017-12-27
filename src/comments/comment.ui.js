@@ -6,12 +6,10 @@ import CommentLoading from 'comments/comment.loading.ui';
 import MetaRow from 'comments/metarow.ui';
 import { getNumItems } from 'items/items.utils';
 import { recursivelyCheckIfKidsChanged } from 'comments/comment.utils';
+import Card from 'common/components/card';
 
 class Comment extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { expanded: false };
-  }
+  state = { expanded: false };
 
   componentDidMount() {
     const { _loading, _loaded, fetchComment, id } = this.props;
@@ -63,14 +61,31 @@ class Comment extends React.Component {
 
   render() {
     const {
-      props: { _loading, text, by, kids, items, id, fetchComment },
+      props: {
+        _loading,
+        text,
+        by,
+        kids,
+        items,
+        id,
+        fetchComment,
+        childComment,
+        onPressIn,
+        onPressOut,
+      },
       state: { expanded },
     } = this;
     const numComments = getNumItems(this.props.kids);
     if (!_loading) {
       return (
-        <TouchableOpacity onPress={this.handleExpand.bind(this)}>
-          <View style={styles.container}>
+        <TouchableOpacity
+          onPress={this.handleExpand.bind(this)}
+          onPressIn={onPressIn}
+          onPressOut={onPressOut}
+        >
+          <View
+            style={[styles.container, childComment ? {} : { marginLeft: 0 }]}
+          >
             {text ? <HTML html={text} /> : <Text />}
             <MetaRow
               numComments={numComments}
@@ -88,6 +103,9 @@ class Comment extends React.Component {
                       key={_id}
                       items={items}
                       fetchComment={fetchComment}
+                      onPressIn={onPressIn}
+                      onPressOut={onPressOut}
+                      childComment
                     />
                   ) : (
                     <Comment
@@ -95,6 +113,9 @@ class Comment extends React.Component {
                       key={_id}
                       fetchComment={fetchComment}
                       items={items}
+                      onPressIn={onPressIn}
+                      onPressOut={onPressOut}
+                      childComment
                     />
                   )
               )}
@@ -112,9 +133,6 @@ const styles = StyleSheet.create({
     paddingTop: 7,
     marginLeft: 15,
     marginRight: 0,
-    borderWidth: 0,
-    borderColor: '#d6d7da',
-    borderBottomWidth: 0.5,
   },
   commentText: {
     fontSize: 15,
@@ -123,5 +141,11 @@ const styles = StyleSheet.create({
     color: 'grey',
   },
 });
+
+export const CommentCard = props => (
+  <Card>
+    <Comment {...props} />
+  </Card>
+);
 
 export default Comment;

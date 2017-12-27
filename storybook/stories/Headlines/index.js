@@ -13,6 +13,7 @@ export default storiesOf('Headline', module)
     <View>
       <Headline _loading />
       <Headline
+        _loaded
         title="Lorem ipsum dolor sit amet"
         by="author"
         score={10}
@@ -24,6 +25,7 @@ export default storiesOf('Headline', module)
     <View>
       <Headline _loading />
       <Headline
+        _loaded
         title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         by="author"
         score={10}
@@ -35,6 +37,7 @@ export default storiesOf('Headline', module)
     <View>
       <Headline _loading />
       <Headline
+        _loaded
         title="Lorem ipsum dolor sit amet"
         by="author"
         score={10}

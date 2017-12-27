@@ -11,3 +11,4 @@ storiesOf('Welcome', module).add('to Storybook', () => (
 
 require('./Headlines');
 require('./Comments');
+require('./Card');

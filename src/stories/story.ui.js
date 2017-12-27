@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 
 import { colors } from 'common/constants';
 import Headline from 'common/components/headline';
-import Comment from 'comments/comment.ui';
+import { CommentCard as Comment } from 'comments/comment.ui';
 
 import { fetchItem } from 'items/items.actions';
 
@@ -47,11 +47,13 @@ class Story extends React.Component {
             data={comments}
             renderItem={({ item }) =>
               item && (
-                <Comment
-                  {...item}
-                  items={items}
-                  fetchComment={fetchItemForId}
-                />
+                <View style={styles.commentsContainer}>
+                  <Comment
+                    {...item}
+                    items={items}
+                    fetchComment={fetchItemForId}
+                  />
+                </View>
               )
             }
             keyExtractor={(item, index) => (item && item.id) || index}
@@ -66,11 +68,14 @@ const styles = StyleSheet.create({
   storyContainer: {
     backgroundColor: colors.background,
     flex: 1,
-    paddingLeft: 0,
-    paddingRight: 15,
   },
   headlineContainer: {
     paddingLeft: 15,
+  },
+  commentsContainer: {
+    paddingTop: 7,
+    paddingLeft: 10,
+    paddingRight: 10,
   },
 });
 
